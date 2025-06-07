@@ -6,7 +6,7 @@ const closeShare = document.querySelector(".close-share");
 let isTooltipVisible = false;
 
 shareIcon.addEventListener("click", (e) => {
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth < 768;
 
   e.stopPropagation();
   isTooltipVisible = !isTooltipVisible;
@@ -32,7 +32,7 @@ shareIcon.addEventListener("click", (e) => {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth >= 768) {
       profile.classList.remove("mobile-share-active");
       isTooltipVisible = false;
     }
